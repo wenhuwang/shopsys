@@ -39,7 +39,7 @@ class Product(models.Model):
     price = models.DecimalField("价格",max_digits=9,decimal_places=2)
     old_price = models.DecimalField("旧价格",max_digits=9,decimal_places=2,
                                     blank=True,default=0.00)
-    image = models.ImageField("图片",upload_to='upload/pro_image/%Y/%m',max_length=50)
+    image = models.ImageField("图片",max_length=50)
     is_active = models.BooleanField("设为激活",default=True)
     is_bestseller = models.BooleanField("设为畅销",default=True)
     is_featured = models.BooleanField("设为推荐",default=True)

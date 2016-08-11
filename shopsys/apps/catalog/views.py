@@ -2,6 +2,7 @@
 # -*- coding:utf-8 -*-
 from django.shortcuts import render,get_object_or_404
 from  .models import Category,Product
+from .forms import ProductAddToCartForm
 
 # Create your views here.
 def index(request,template_name):
@@ -22,4 +23,5 @@ def show_product(request,product_slug,template_name):
     page_title = p_obj.name
     meta_keywords = p_obj.meta_keywords
     meta_description = p_obj.meta_description
+    form = ProductAddToCartForm()
     return render(request,template_name,locals())

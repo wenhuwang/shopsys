@@ -1,0 +1,17 @@
+{% extends "catalog.html" %}
+{% block content %}
+<h1>{{ c_obj.name }}</h1>
+{{ c_obj.description }}
+<br /><br />
+{% for p_obj in products %}
+<div class="product_thumbnail">
+    <a href="{{ p_obj.get_absolute_url }}">
+        <img src="{{ MEDIA_URL }}{{ p_obj.image }}" 􀀁
+             alt="{{ p_obj.name }}" class="bn"
+             width="140" height="140"/>
+        <br />
+        {{ p_obj.name }}
+    </a>
+</div>
+{% endfor %}
+{% endblock %}

@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 from django.contrib import admin
-from .models import Category,Product
-from .forms import ProductAdminForm
+from models import Category,Product
+from forms import ProductAdminForm
 # Register your models here.
 
 @admin.register(Product)
@@ -26,4 +26,3 @@ class Category(admin.ModelAdmin):
     search_fields = ['name','description','meta_keywords','meta_description']
     exclude = ('crested_at','updated_at',)
     prepopulated_fields = {'slug':('name',)}
-
